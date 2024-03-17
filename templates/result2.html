@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block body %}
+  <div class="final_seg">
+    <div class="container">
+      <h3>Test Result for {{ disease }}</h3>
+      <p>Thank you for sharing your insights. We'll carefully analyze your responses to better tailor our approach and
+        support in addressing your specific needs and concerns</p>
+
+      <!-- for pi and text -->
+      <div class="common">
+        <!-- pi -->
+        <div class="programming-stats">
+          <div class="chart-container">
+            <canvas class="my-chart"></canvas>
+          </div>
+
+          <div class="details">
+            <ul></ul>
+          </div>
+        </div>
+
+        <!-- side text -->
+        <div class="text">
+          <p>Based on your responses, it appears that you may be experiencing symptoms consistent with <span class="p"
+              style="background-color: ffffff;">{{ disease }}</span>. We recommend consulting with a healthcare
+            professional for a thorough evaluation and appropriate management.</p>
+          <p ><a href="{{ link }}" style="background-color: white;">Know More about {{ disease }}</a></p>
+        </div>
+
+      </div>
+
+      <!-- button -->
+      <button class="button" onclick="goBackTwoPages()">Go back</button>
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const chartData = {
+      labels: ["Chances", "No chances"],
+      data: [{{ percantage}}, 100-{{ percantage }}],
+    };
+
+    const myChart = document.querySelector(".my-chart");
+    const ul = document.querySelector(".programming-stats .details ul");
+
+    new Chart(myChart, {
+      type: "doughnut",
+      data: {
+        labels: chartData.labels,
+        datasets: [
+          {
+            label: "Disease Probability",
+            data: chartData.data,
+          },
+        ],
+      },
+      options: {
+        borderWidth: 8,
+        borderRadius: 8,
+        hoverBorderWidth: 0,
+        plugins: {
+          legend: {
+            display: true, // Whether to display the legend or not
+            position: 'bottom', // Position of the legend. Possible values: 'top', 'bottom', 'left', 'right', or a position object {x, y}
+            align: 'center', // Alignment of the legend. Possible values: 'start', 'center', or 'end'
+            labels: {
+              boxWidth: 40, // Width of each legend box
+              padding: 20, // Padding between legend elements
+              usePointStyle: true, // Whether to use a circle or a square as the legend item shape
+              font: {
+                size: 12, // Font size of the legend labels
+                family: 'Poppins', // Font family of the legend labels
+                color: '#333', // Font color of the legend labels
+                weight: 'normal', // Font weight of the legend labels
+              },
+              generateLabels: undefined, // Function to generate custom legend labels
+            },
+          },
+        },
+        animation: {
+          duration: 4000, // Set the duration of the animation in milliseconds
+          easing: 'easeOutBounce' // Set the easing function for the animation
+        }
+      },
+    });
+
+    const populateUl = () => {
+      chartData.labels.forEach((l, i) => {
+        let li = document.createElement("li");
+        li.innerHTML = `${l}: <span class='percentage'>${chartData.data[i]}%</span>`;
+        ul.appendChild(li);
+      });
+    };
+
+    populateUl();
+    function goBackTwoPages(){
+      window.history.go(-2);
+    }
+
+  </script>
+
+{% endblock %}

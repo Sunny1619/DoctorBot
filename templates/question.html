@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="main_box">
+  <h1 id="questiontag">Questions Regarding {{ disease }}</h1>
+  <p style="background-color: #ffffff;">Answer the following questinos to get the more accuracy in your disease.</p>
+  <form method="POST" action="/result2/{{ disease }}/{{ j }}" id="qs_form">
+  {% for i in questions %}
+  <div class="qs_box">
+    <div id="qs_text">
+      <h4 class="qs">{{ i[0] }}</h4>
+      <a href="{{ i[1] }}" style="background-color: #ffffff;">How to check?</a>
+    </div>
+    <div class="checkbox-group">
+      <label><input type="radio" name="response{{ i[2] }}" value="yes">YES</label>
+      <label><input type="radio" name="response{{ i[2] }}" value="no">NO</label>
+    </div>
+  </div>
+  {% endfor %}
+  <div id="continue-btn">
+    <input class="continue-btn" type="submit" value="Continue">
+  </div>
+  </form>
+</div>
+{% endblock %}

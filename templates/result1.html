@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div id="Test">
+  <h1 id="test"> Test Result </h1><br>
+  Here is the final result: <br>
+</div>
+<section class="result_text">
+  <div class="dis_text">
+    {% for key, value in distosymp_ordered.items() %}
+    <div class="dis_text" id="dis1">
+      <div id="dis_name">
+        <p id="dis1">{{ key }}</p>
+        <a class="link" href="/question/{{ value[0] }}/{{ key }}"><button class="check-button" type="button" style="background-color: {{ value[2] }};">Check more</button></a>
+      </div>
+      <div id="dis_pad">
+        <span class="{{ value[3] }}"></span>
+        <span id="num">{{ value[1] }}%</span>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="dis_pie">
+    <div class="pie_start">
+      <h3 id="pie_name">RESULT PIE CHART</h3>
+    </div>
+    <div class="chart-container">
+      <canvas class="my-chart"></canvas>
+    </div>
+  </div>
+
+</section>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const chartData = {
+    labels: [{% for i in disnameforJS %}
+                "{{i}}",
+                {% endfor %}
+                ],
+    data: [{% for j in percentageforJS %}
+                {{j}},
+                {% endfor %}
+            ],
+  }
+  const myChart = document.querySelector(".my-chart");
+  new Chart(myChart, {
+    type: "doughnut",
+    data: {
+      labels: chartData.labels,
+      datasets: [
+        {
+          label: "Disease Percentage",
+          data: chartData.data,
+        },
+      ],
+    },
+    options: {
+      borderWidth: 10,
+      borderRadius: 2,
+      hoverBorderWidth: 0,
+    },
+  });
+</script>
+{% endblock %}
