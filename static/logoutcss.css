@@ -29,14 +29,14 @@
     line-height: 80px;
     margin: 0 5px;
   }
-  nav ul li #specific-anchor{
+  nav ul li a{
     color: black;
     font-size: 17px;
     padding: 7px 13px;
     border-radius: 3px;
     text-transform: uppercase;
   }
-  #specific-anchor.active,#specific-anchor:hover{
+  a.active,a:hover{
     background: #1ad0e8;
     transition: .5s;
   }
@@ -97,45 +97,7 @@
     height: calc(100vh - 80px);
   }
 
-  .container {
-    max-width: 500px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border: 3px solid #1ad0e8;
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
-  .container label {
-    display: block;
-    margin-bottom: 5px;
-    margin-top: 20px;
-    font-weight: bold;
-  }
-  input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-  }
-  input[type="submit"] {
-    background-color: #1ad0e8;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  input[type="submit"]:hover {
-    background-color: #0c6ae4;
-  }
-  .confirm-box{
+.confirm-box{
     background: rgba(0, 0, 0, 0.5);
     width: 100%;
     height: 100%;
@@ -160,20 +122,20 @@
 .message-box form{
     margin-top: 40px;
 }
-.message-box button#login-button{
+.message-box button{
     padding: 10px 20px;
     font-size: 20px;
-    margin: 0 30px;
+    margin: 0 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: 100px;
-    background-color: rgb(54, 106, 235);
-    color: white;
-    box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.3);
-    margin-top: 20px;
+    margin-left: 60px;
 }
-.message-box button#login-button:hover {
-    background-color: #4186ff;
-    transform: translateY(-2px);
+.message-box button#yes{
+    background: green;
+    color: white;
+}
+.message-box button#no{
+    background: red;
+    color: white;
 }

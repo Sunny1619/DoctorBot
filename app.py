@@ -1,5 +1,5 @@
 import ast
-from flask import Flask, render_template, request,redirect, url_for,flash , session
+from flask import Flask, render_template, request,redirect, url_for,flash , session, jsonify
 from dbConnector import UseDatabase
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user,current_user
@@ -9,14 +9,14 @@ import secrets
 from datetime import timedelta 
 
 
-dbconfig = {'host': '127.0.0.1', 'user': 'root', 'password': '97082', 'database': 'oops2'}
+dbconfig = {'host': '127.0.0.1', 'user': 'root', 'password': '97082', 'database': 'oops5'}
 
 app = Flask(__name__)
 
 
 #auth config
 app.config['SECRET_KEY'] = '7!1:2^64e3u/ghdr?83lawe;#;;./' #it will kill session if server goes down, may is hould give a hard coded random key
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:97082@localhost/oops2'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:97082@localhost/oops5'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 #session config
@@ -63,7 +63,7 @@ def logout():
         else:
             return redirect(url_for('homepage'))
     
-    return render_template('logout.html', activelogout='active', distosymp_ordered={'test':[[1],'abc', 00, 'testclass']})
+    return render_template('logout.html', activelogout='active', css='/static/logoutcss.css',distosymp_ordered={'test':[[1],'abc', 00, 'testclass']})
 
 
 @app.route('/signup', methods=['GET', 'POST'])
@@ -112,7 +112,14 @@ def homepage() -> 'Html page':
 
 @app.route('/product')  #Done
 def product() -> 'Html Page':
-    return render_template('product.html', activeproduct='active',css='static/productcss.css', distosymp_ordered={'test':[[1],'abc', 00, 'testclass']})  
+    with UseDatabase(dbconfig) as cursor:
+        cmd = "SELECT sympname FROM symptoms"
+        cursor.execute(cmd)
+        symptomslt = cursor.fetchall()
+
+    symptoms = [item for sublist in symptomslt for item in sublist]
+    
+    return render_template('product.html', activeproduct='active',css='static/productcss.css', distosymp_ordered={'test':[[1],'abc', 00, 'testclass']}, symptoms=symptoms)  
 
 @app.route('/about_us') #Sourish Will Do It
 def about_us() -> 'Html Page':
@@ -151,7 +158,7 @@ def tool1() -> 'Name of Possible Diseases':
         key_length_pairs = [(key, len(value[0])) for key, value in distosymp_dict.items()]
         key_length_pairs.sort(key=lambda x: x[1], reverse=True)
 
-        colors = ['#22cfcf', '#ffcd56', '#ff9f40', '#ff6384', '#36a2eb']
+        colors = ['#36a2eb', '#ff6384', '#ff9f40', '#ffcd56', '#22cfcf']
         classnames = ['disbar1', 'disbar2', 'disbar3', 'disbar4', 'disbar5']
         i = 0
         distosymp_ordered = {}
