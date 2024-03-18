@@ -196,6 +196,9 @@ def question(sympkeys, disname) -> 'Questions Of a Particular Disease':
             if i[0] not in sympkeys:
                 question_sympkeys.append(i[0])
 
+        if len(question_sympkeys)==0:
+            return redirect(url_for('result2', disease=disname, j='0'))
+
         question_sympkeys = tuple(question_sympkeys)     
         cmd = "SELECT question, checks FROM symptodis WHERE sympkey IN {}".format(question_sympkeys)
         cursor.execute(cmd)
