@@ -1,0 +1,10 @@
+diskey,disname,cases,link
+1,Pneumonia,450,https://www.who.int/news-room/fact-sheets/detail/pneumonia
+2,Diarrhea,1700,https://www.who.int/news-room/fact-sheets/detail/diarrhoeal-disease
+3,Malaria,249,https://www.who.int/news-room/fact-sheets/detail/malaria
+4,Measles,0.97,https://www.who.int/news-room/fact-sheets/detail/measles
+5,Mastoiditis,-1,https://en.wikipedia.org/wiki/Mastoiditis
+6,Ear Infection,709,https://www.ncbi.nlm.nih.gov/books/NBK470332/
+7,Malnutrition,149,https://www.who.int/news-room/questions-and-answers/item/malnutrition
+8,Anemia,1600,https://www.who.int/health-topics/anaemia#tab=tab_1
+9,Dehydration,30,https://www.ncbi.nlm.nih.gov/books/NBK436022/
