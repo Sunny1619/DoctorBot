@@ -35,6 +35,7 @@ nav ul li a{
   padding: 7px 13px;
   border-radius: 3px;
   text-transform: uppercase;
+  text-decoration: none;
 }
  a.active,a:hover{
   background: #1ad0e8;
@@ -210,3 +211,253 @@ animation: fadein 2.5s;
     justify-content: center;
     margin: 0 auto;
   }
+
+
+  header {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 2em 0;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 2.5em;
+  }
+  
+ 
+  /*
+  main {
+    padding: 20px;
+  }
+  
+  .about-section {
+    margin-bottom: 30px;
+  }
+  
+  .about-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .about-image img {
+    max-width: 100%;
+    height: auto;
+    margin-right: 20px;
+  }
+  
+  .about-text p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #333;
+  } */
+  
+  
+  h1, h2, h3 {
+    margin-bottom: 10px;
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2em 1em;
+    text-align: center;
+  }
+
+  .column {
+    width: 100%;
+    padding: 0.5em 0;
+    margin: 8px 0;
+  }
+  h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 3.5em;
+    color: #1f003b;
+  }
+  .card {
+    box-shadow: 0 0 2.4em rgba(25, 0, 58, 0.1);
+    padding: 2em 1em;
+    margin: 8px;
+    border-radius: 0.6em;
+    color: #1f003b;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #ffffff;
+    align-items: center;
+    border-color: transparent;
+  }
+  .card .img-container {
+    width: 6em;
+    height: 6em;
+    background-color: #a993ff;
+    padding: 0.2em;
+    border-radius: 50%;
+    margin: 0 auto 1em auto;
+  }
+  .card img {
+    width: 100%;
+    border-radius: 50%;
+  }
+  .card h3 {
+    font-weight: 500;
+    font-size: 1.5em;
+    text-transform: uppercase;
+  }
+  .card p {
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin: 0.5em 0 1em 0;
+    letter-spacing: 1px;
+  }
+  
+  .card a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.2em;
+  }
+  .card:hover {
+    background: linear-gradient(#6045ea, #8567f7);
+    color: white;
+  }
+  
+  .card:hover .icon{
+    color: black;
+  }
+  .card:hover .img-container {
+    transform: scale(1.15);
+  }
+  
+  
+  /* ------ */
+  .wrapper {
+    display: inline-flex;
+    list-style: none;
+  }
+  
+  .wrapper .icon {
+    position: relative;
+    background: #ffffff;
+    border-radius: 50%;
+    padding: 8px;
+    margin: 8px;
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.8s cubic-bezier(0, 0.46, 0, 1.16) 0s;
+  }
+ 
+  .wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 12px;
+    background: #ffffff;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.8s cubic-bezier(0, 0.46, 0, 1.16) 0s;
+  }
+  
+  .wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #ffffff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.8s cubic-bezier(0, 0.46, 0, 1.16) 0s;
+  }
+  
+  .wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 0.9;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  .wrapper .icon:hover span,
+  .wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  .wrapper .linkedin:hover,
+  .wrapper .linkedin:hover .tooltip,
+  .wrapper .linkedin:hover .tooltip::before {
+    background: #2d45ff;
+    color: #ffffff;
+  }
+  
+  .wrapper .github:hover,
+  .wrapper .github:hover .tooltip,
+  .wrapper .github:hover .tooltip::before {
+    background: #833ab4;
+    color: #ffffff;
+  }
+  
+  /* ------ */
+  
+  @media screen and (min-width: 360px) {
+      h1{
+      font-size: 2rem;
+    }
+    .card h3{
+      font-size: 0.9rem;
+    }
+    .card p{
+      font-size: 0.5rem;
+    }
+  }
+  @media screen and (min-width: 580px) {
+    section {
+      padding: 1em 4em;
+    }
+    .column {
+      flex: 0 0 50%;
+      max-width: 50%;
+      padding: 0 1em;
+    }
+    .card h3{
+      font-size: 1rem;
+    }
+    .card p{
+      font-size: 0.6rem;
+    }
+    h1{
+      font-size: 2rem;
+    }
+  }
+  @media screen and (min-width: 808px) {
+    section {
+      padding: 1em 7em;
+    }
+    .column {
+      flex: 0 0 50%;
+      max-width: 50%;
+      padding: 0 1em;
+    }
+  }
+  @media screen and (min-width: 992px) {
+    section {
+      padding: 1em;
+    }
+    .card {
+      padding: 3em 1em;
+    }
+    .column {
+      flex: 0 0 33.33%;
+      max-width: 33.33%;
+      padding: 0 1em;
+    }
+  }
+  
