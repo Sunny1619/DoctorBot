@@ -121,12 +121,12 @@ def product() -> 'Html Page':
     
     return render_template('product.html', activeproduct='active',css='static/productcss.css', distosymp_ordered={'test':[[1],'abc', 00, 'testclass']}, symptoms=symptoms)  
 
-@app.route('/about_us') #Sourish Will Do It
+@app.route('/about_us') 
 def about_us() -> 'Html Page':
 
     return render_template('about_us.html', activeabout='active',css='static/about_uscss.css', distosymp_ordered={'test':[[1],'abc', 00, 'testclass']})
 
-@app.route('/result1', methods=['GET', 'POST']) #Anybody Can Try This Best One Will Be Done
+@app.route('/result1', methods=['GET', 'POST']) 
 def tool1() -> 'Name of Possible Diseases':
 
     symptom1 = request.form['symptom1']

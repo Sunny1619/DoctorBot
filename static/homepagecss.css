@@ -8,6 +8,35 @@
   body{
     font-family: sans-serif;
   }
+  .getstart{
+    margin-top: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10%;
+}
+.get-btn{
+  margin-top: 28%;
+    margin-left: 18%;
+}
+
+.getstart-btn{
+    height: 64px;
+    width: 256px;
+    border-radius: 16px;
+    background-color: #1ad0e8;
+    color: white;
+    border: none;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.getstart-btn:hover{
+  scale: 0.95;
+  border-radius: 16px;
+}
+
   nav{
     background: white;
     height: 80px;
