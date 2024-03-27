@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation</title>
+    <style>
+        .confirm-box{
+            background: rgba(0, 0, 0, 0.5);
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+        }
+        .message-box{
+            width: 350px;
+            height: 150px;
+            background-color: white;
+            border-radius:10px ;
+        }
+        .message-box p{
+            text-align: center;
+            font-size: 24px;
+        }
+        .message-box form{
+            margin-top: 40px;
+        }
+        .message-box button{
+            padding: 10px 20px;
+            font-size: 20px;
+            margin: 0 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 120px;
+        }
+        .message-box button#goback{
+            background: rgb(13, 190, 203);
+            color: white;
+        }
+
+
+
+        
+    </style>
+</head>
+<body>
+    <div class="confirm-box">
+        <div class="message-box">
+            <p style="font-size: 18px;">{{msg}}</p>
+            <form action="{{link}}" method="get">
+            <button type="submit" name="response" value="goback" id="goback">Go Back</button>
+        </form>
+        </div>
+    </div>
+</body>
+</html>
+
+
+

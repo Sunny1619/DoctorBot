@@ -1,5 +1,6 @@
 Querys for Creating Tables.
 
+database 1
 create table disease(
     -> diskey int primary key auto_increment,
     -> disname varchar(255),
@@ -18,4 +19,30 @@ create table symptodis(
     -> foreign key (sympkey) references symptoms(sympkey),
     -> foreign key (diskey) references disease(diskey));
 
-Also run the AuthTable.py to create database for Authentication System and make sure to replace the username and password of your mysql with the one given in this file  before running this file.
+databse2
+create table phistory(
+    -> id int primary key auto_increment,
+    -> dates datetime default now(),
+    -> name varchar(255),
+    -> age int,
+    -> disease varchar(255),
+    -> bmi float,
+    -> bloodp varchar(255),
+    -> bloodsl varchar(255),
+    -> sex varchar(255),
+    -> phoneno varchar(255),
+    -> aadhar varchar(255),
+    -> user_id int);
+
+ create table govauth(
+    -> admin_id int,
+    -> user_id int,
+    -> name varchar(255));
+
+
+1.create the above tables manually in two different database and import the data in govauth.csv in table govauth.
+2.configure the AuthTable.py for database2 and run it.
+3.configure the dbconfig variables in app.py to match your database user and password.
+
+Ready To Runnnnnnnn.........
+  

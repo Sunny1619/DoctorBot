@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block body %}
+{% if current_user.is_authenticated %}
+
+<div class="main_box">
+    <h2 id="symptomform">Get patient Details</h2>
+    <form method="POST" action="/patient_details2">
+        <div class="form-group">
+            <label for="pd[1]">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="pd[2]">Age:</label>
+            <input type="text" id="age" name="age" required>
+        </div>
+        <div class="form-group">
+            <label for="pd[3]">Sex:</label>
+            <input type="text" id="sex" name="sex" required>
+        </div>
+        <div class="form-group">
+            <label for="pd[4]">Phone-No:</label>
+            <input type="text" id="phoneno" name="phoneno" required>
+        </div>
+        <div class="form-group">
+            <label for="pd[5]">Aadhar Number:</label>
+            <input type="text" id="aadhar" name="aadhar" required>
+        </div>
+        <input type="submit" value="Submit" id="formsubmit">
+    </form>
+</div>
+
+
+{% else %}
+<div class="confirm-box">
+    <div class="message-box">
+        <p>Please Login before using the product </p>
+        <a href="/login_User"><button type="submit" name="response" value="no" id="login-button">Login Here</button></a>
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}

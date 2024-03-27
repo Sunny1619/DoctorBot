@@ -19,25 +19,57 @@ login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 
 # User Model
-class User(UserMixin, db.Model):
-    __tablename__ = 'auth'
-    id = db.Column(db.Integer, primary_key=True)
-    fname = db.Column(db.String(50), nullable=False)
-    lname = db.Column(db.String(50))
+class UserAuth(UserMixin, db.Model):
+    __tablename__ = 'userauth'
+    user_id=db.Column(db.Integer , primary_key = True, autoincrement=False)
+    name = db.Column(db.String(50), nullable=False)
     email = db.Column(db.String(100), unique=True, nullable=False)
     password_hash = db.Column(db.String(255), nullable=False)
+    organisation = db.Column(db.String(250) , nullable=False )
+    admin_id = db.Column(db.Integer, db.ForeignKey('adminauth.admin_id'), nullable=False)
+    role = db.Column(db.String(250), nullable=False)
 
     def set_password(self, password):
         self.password_hash = bcrypt.generate_password_hash(password).decode('utf-8')
 
     def check_password(self, password):
         return bcrypt.check_password_hash(self.password_hash, password)
+    
+    def get_id(self):
+        return self.user_id
+
+#root table
+class AdminAuth(UserMixin, db.Model):
+    __tablename__ = 'adminauth'
+    admin_id=db.Column(db.Integer , primary_key = True, autoincrement=False)
+    organisation = db.Column(db.String(250) , nullable=False )
+    email = db.Column(db.String(100), unique=True, nullable=False)
+    password_hash = db.Column(db.String(255), nullable=False)
+    role = db.Column(db.String(250), nullable=False)
+    orders = db.relationship('UserAuth', backref='adminauth', lazy=True)
+
+    def set_password(self, password):
+        self.password_hash = bcrypt.generate_password_hash(password).decode('utf-8')
+
+    def check_password(self, password):
+        return bcrypt.check_password_hash(self.password_hash, password)
+    
+    def get_id(self):
+        return self.admin_id
+    
 
 # User Loader
 @login_manager.user_loader
-def load_user(user_id):
-    return User.query.get(int(user_id))
-
+def load_user(id):
+    user = UserAuth.query.get(int(id))
+    if user:
+        return user
+    else:
+        admin = AdminAuth.query.get(int(id))
+        if admin:
+            return admin
+        else:
+            return None
 @app.route('/dashboard')
 @login_required
 def dashboard():

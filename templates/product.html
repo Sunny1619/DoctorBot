@@ -5,26 +5,26 @@
 
 <div class="container">
     <h2 id="symptomform">Symptoms Input Form</h2>
-    <form method="POST" action="/result1">
+    <form method="POST" action="/result1/{{name}}/{{age}}/{{sex}}/{{phoneno}}/{{aadhar}}/{{bloodg}}/{{weight}}/{{height}}/{{bloodp}}/{{bloodsl}}/{{bmi}}">
         <div class="form-group">
             <label for="symptom1">Symptom 1:</label>
-            <input type="text" id="symptom1" name="symptom1">
+            <input type="text" id="symptom1" name="symptom1" required>
         </div>
         <div class="form-group">
             <label for="symptom2">Symptom 2:</label>
-            <input type="text" id="symptom2" name="symptom2">
+            <input type="text" id="symptom2" name="symptom2" required>
         </div>
         <div class="form-group">
             <label for="symptom3">Symptom 3:</label>
-            <input type="text" id="symptom3" name="symptom3">
+            <input type="text" id="symptom3" name="symptom3" required>
         </div>
         <div class="form-group">
             <label for="symptom4">Symptom 4:</label>
-            <input type="text" id="symptom4" name="symptom4">
+            <input type="text" id="symptom4" name="symptom4" required>
         </div>
         <div class="form-group">
             <label for="symptom5">Symptom 5:</label>
-            <input type="text" id="symptom5" name="symptom5">
+            <input type="text" id="symptom5" name="symptom5" required>
         </div>
         <input type="submit" value="Submit" id="formsubmit">
     </form>

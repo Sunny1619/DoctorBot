@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="main_box" class>
+    <form method="POST" action="/add_disease">
+        <h2 id="symptomform">Disease Input Form</h2>
+        <div class="dis_input" style="display: flex; gap: 32px;">
+            <div class="form-group" style="width: 100%;">
+                <label for="disease" style="color: rgba(69, 69, 69,0.8);">Disease Name:</label>
+                <input type="text" id="disease" name="disease" required>
+            </div>
+            <div class="form-group" style="width: 100%;">
+                <label for="cases" style="color: rgba(69, 69, 69,0.8);">Cases:</label>
+                <input type="text" id="cases" name="cases" required>
+            </div>
+            <div class="form-group" style="width: 100%;">
+                <label for="link" style="color: rgba(69, 69, 69,0.8);">Link:</label>
+                <input type="text" id="link" name="diseaselink" placeholder="eg: https://www.who.int/...." required>
+            </div>
+        </div>
+        <h2 id="symptomform">Symptoms Input Form</h2>
+        <div class="symp" style="display: flex; gap: 64px;">
+            <div class="form-group" style="width: 100%;">
+                <label for="symptom1" style="color: rgba(69, 69, 69,0.8);">Symptom 1:</label>
+                <input type="text" id="symptom1" name="symptom1" required>
+            </div>
+            <div class="form-group" style="width: 100%;">
+                <label for="howtocheck1" style="color: rgba(69, 69, 69,0.8);">How to check:</label>
+                <input type="text" id="howtocheck1" name="check1">
+            </div>
+        </div>
+        <div class="symp" style="display: flex; gap: 64px;">
+            <div class="form-group" style="width: 100%;">
+                <label for="symptom2" style="color: rgba(69, 69, 69,0.8);">Symptom 2:</label>
+                <input type="text" id="symptom2" name="symptom2" required>
+            </div>
+            <div class="form-group" style="width: 100%;">
+                <label for="howtocheck2" style="color: rgba(69, 69, 69,0.8);">How to check:</label>
+                <input type="text" id="howtocheck2" name="check2">
+            </div>
+        </div>
+        <div class="symp" style="display: flex; gap: 64px;">
+            <div class="form-group" style="width: 100%;">
+                <label for="symptom3" style="color: rgba(69, 69, 69,0.8);">Symptom 3:</label>
+                <input type="text" id="symptom3" name="symptom3" required>
+            </div>
+            <div class="form-group" style="width: 100%;">
+                <label for="howtocheck3" style="color: rgba(69, 69, 69,0.8);">How to check:</label>
+                <input type="text" id="howtocheck3" name="check3">
+            </div>
+        </div>
+        <div class="symp" style="display: flex; gap: 64px;">
+            <div class="form-group" style="width: 100%;">
+                <label for="symptom4" style="color: rgba(69, 69, 69,0.8);">Symptom 4:</label>
+                <input type="text" id="symptom4" name="symptom4" required>
+            </div>
+            <div class="form-group" style="width: 100%;">
+                <label for="howtocheck4" style="color: rgba(69, 69, 69,0.8);">How to check:</label>
+                <input type="text" id="howtocheck4" name="check4">
+            </div>
+        </div>
+        <div class="symp" style="display: flex; gap: 64px;">
+            <div class="form-group" style="width: 100%;">
+                <label for="symptom5" style="color: rgba(69, 69, 69,0.8);">Symptom 5:</label>
+                <input type="text" id="symptom5" name="symptom5" required>
+            </div>
+            <div class="form-group" style="width: 100%;">
+                <label for="howtocheck5" style="color: rgba(69, 69, 69,0.8);">How to check:</label>
+                <input type="text" id="howtocheck5" name="check5">
+            </div>
+        </div>
+        <input type="submit" value="Submit" id="formsubmit">
+    </form>
+</div>
+
+<script> 
+    $( function() { 
+      var availableTags = [ 
+          {% for symptom in symptoms %} 
+              "{{symptom}}", 
+          {% endfor %} 
+      ]; 
+      $( "#symptom1" ).autocomplete({ 
+        source: availableTags 
+      });
+    } );
+    $( function() { 
+      var availableTags = [ 
+          {% for symptom in symptoms %} 
+              "{{symptom}}", 
+          {% endfor %} 
+      ]; 
+      $( "#symptom2" ).autocomplete({ 
+        source: availableTags 
+      });
+    } );
+    $( function() { 
+      var availableTags = [ 
+          {% for symptom in symptoms %} 
+              "{{symptom}}", 
+          {% endfor %} 
+      ]; 
+      $( "#symptom3" ).autocomplete({ 
+        source: availableTags 
+      });
+    } ); 
+    $( function() { 
+      var availableTags = [ 
+          {% for symptom in symptoms %} 
+              "{{symptom}}", 
+          {% endfor %} 
+      ]; 
+      $( "#symptom4" ).autocomplete({ 
+        source: availableTags 
+      });
+    } ); 
+    $( function() { 
+      var availableTags = [ 
+          {% for symptom in symptoms %} 
+              "{{symptom}}", 
+          {% endfor %} 
+      ]; 
+      $( "#symptom5" ).autocomplete({ 
+        source: availableTags 
+      });
+    } ); 
+    </script>
+
+{% endblock %}

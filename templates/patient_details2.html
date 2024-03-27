@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="main_box">
+    <h2 id="symptomform">Get patient Vital Details</h2>
+    <form method="POST" action="/product/{{name}}/{{age}}/{{sex}}/{{phoneno}}/{{aadhar}}">
+        <div class="form-group">
+            <label for="pd[6]">Blood Group:</label>
+            <input type="text" id="bloodgroup" name="bloodgroup" required>
+        </div>
+        <div class="form-group">
+            <label for="pd[7]">Weight:</label>
+            <input type="text" id="weight" name="weight" required placeholder="In Kgs">
+        </div>
+        <div class="form-group">
+            <label for="pd[8]">Height:</label>
+            <input type="text" id="height" name="height" required placeholder="In Meters">
+        </div>
+        <div class="form-group">
+            <label for="pd[9]">Blood Pressure:</label>
+            <input type="text" id="bloodpressure" name="bloodpressure" required placeholder="eg: 120-80">
+        </div>
+        <div class="form-group">
+            <label for="pd[10]">Blood Sugar Level:</label>
+            <input type="text" id="sugar" name="sugar" required>
+        </div>
+        <input type="submit" value="Submit" id="formsubmit">
+    </form>
+</div>
+
+
+{% endblock %}

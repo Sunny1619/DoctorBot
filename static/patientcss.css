@@ -1,17 +1,16 @@
+
 *{
   padding: 0;
   margin: 0;
   text-decoration: none;
   list-style: none;
   box-sizing: border-box;
-  background-color: #f1f1f1;
 }
 body{
   font-family: sans-serif;
-  overflow-x: hidden;
 }
 nav{
-  background:#f1f1f1;
+  background: white;
   height: 80px;
   width: 100%;
 }
@@ -98,141 +97,91 @@ section{
   background-size: cover;
   height: calc(100vh - 80px);
 }
-div{
-  height: 100px;
-  width: 400px;
-  
-}
-#Test{
-  margin-left: 150px;
-  margin-top: 50px;
-  text-align: justify;
-  background-color: #f1f1f1;
-}
-#test{
-  font-size: 30px;
-}
-.dis_text,.dis_pie{
+.main_box{
   background-color: #ffffff;
-  margin-left: 150px;
-  height: 800px;
-  width: 600px;
-  border-radius: 20px;
- 
-}
-#dis1{
-  height:20%;
-  border-radius: 15px;
-  position: relative;
-  margin-left: 0px;
-  font-size: 20px;
-}
-#dis_name{
-  height: 30%;
-  width: 100%;
-  background-color: #ffffff;
-  position: relative;
-  margin-left:0px;
+  height: 600px;
+  width: 700px;
   padding: 40px;
-  display: inline-block;
-  border-radius: 15px;
-}
-.check-button{
   margin-left: 400px;
-  border: 0;
-  line-height: 2;
-  padding: 0 10px;
-  font-size: 1rem;
-  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 50px;
+  border-radius: 20px;
+  box-shadow: 0px 10px 30px -15px rgba(0, 0, 0, 0.3);
+  border: 3px solid #1ad0e8;
+}
+.main_box:hover {
+  box-shadow: 0px 10px 40px -15px rgba(0, 0, 0, 0.5); /* Change box-shadow on hover */
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.main_box label {
+  display: block;
+  margin-bottom: 5px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+input[type="submit"] {
+  background-color: #1ad0e8;
   color: #fff;
-  border-radius: 6px;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
 }
-
-.check-button:hover {
-  background-color: rgb(14, 80, 160);
+input[type="submit"]:hover {
+  background-color: #0c6ae4;
 }
-
-.check-button:active {
-  box-shadow:
-    inset -2px -2px 3px rgba(255, 255, 255, 0.6),
-    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
-} 
-.link{
-  background-color: #ffffff;
-}
-.dis_text  .line{
-height: 10px;
-width: 65%;
-background: lightgrey;
-position: relative;
-border-radius: 15px;
-display: inline-block;
-margin-left:40px
-}
-.dis_text .line::before {
-content: "";
-position: absolute;
-height: 100%;
-width: 80%;
-left: 0;
-top: 0;
-border-radius: 10px;
-}
-#num{
-font-size: 20px;
-position: relative;
-margin-left: 30px;
-background-color: #ffffff;
-text-align: top;
-height: 100%;
-}
-#dis_pad{
-  height: 50px;
+.confirm-box{
+  background: rgba(0, 0, 0, 0.5);
   width: 100%;
-  background-color: #ffffff;
-  position: relative;
-  margin-left:0px;
-  display: inline-block;
-  margin-top: 30px;
-}
-.result_text{
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
   display: flex;
+  justify-content: center; 
+  align-items: center;
 }
-
-.dis_pie{
- margin-right: 20px;
- margin-left: 30px;
+.message-box{
+  width: 350px;
+  height: 150px;
+  background-color: white;
+  border-radius:10px ;
 }
-.pie_start{
-  background-color: #ffffff;
-  width: 100%;
-  padding: 40px;
-  border-radius: 15px;
-}
-#pie_name{
-  background-color: #ffffff;
+.message-box p{
   text-align: center;
+  font-size: 24px;
 }
-.dis_stats{
-  background-color: #ffffff;
-  margin-left: 50px;
+.message-box form{
+  margin-top: 40px;
 }
-.chart-container{ 
-  height: 400px;
-  margin-left: 80px;
-  background-color: #ffffff;
+.message-box button#login-button{
+  padding: 10px 20px;
+  font-size: 20px;
+  margin: 0 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 100px;
+  background-color: rgb(54, 106, 235);
+  color: white;
+  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.3);
+  margin-top: 20px;
 }
-.my-chart{
-  background-color: #ffffff;
-  box-shadow: 0px 4px 12px -2px rgba(0, 0, 0, 0.3);
-  border-radius: 15px;
-}
-.dis_color{
-  width:100%;
-  height:200px;
-  margin-top: 400px;
-  background-color: #ffffff;
-  border-radius: 15px;
+.message-box button#login-button:hover {
+  background-color: #4186ff;
+  transform: translateY(-2px);
 }
 .dropbtn {
   /* background-color: #3498DB;
@@ -268,7 +217,7 @@ height: 100%;
   display: none;
   position: absolute;
   background-color: #f1f1f1;
-  max-width: 150px;
+  min-width: 150px;
   min-height: 80px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -282,8 +231,6 @@ height: 100%;
   text-decoration: none;
   text-align: center;
   display: block;
-  left: 0;
-  right: auto;
 }
 
 /* Change color of dropdown links on hover */
@@ -291,34 +238,3 @@ height: 100%;
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
-
-#Test{
-  margin-left: 150px;
-  margin-top: 0px; /*   changed   */
-  text-align: justify;
-  background-color: #f1f1f1;
-  width: 100%;     /*   changed   */
-  height: 150px;
-}
-#patient_id{
-  width: 100%;
-  height: 70%;
-}
-#test{
-  font-size: 30px;
-}
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-th, td {
-  border: 2px solid rgb(0, 0, 0);
-  padding: 8px;
-  text-align: center;
-}
-
-th {
-  background-color: #437bff;
-  color: white;
-}

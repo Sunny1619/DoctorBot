@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="{{css}}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js"></script>
-    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css"
-        rel="stylesheet" type="text/css" />
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    
     <style>
       {% for key, value in distosymp_ordered.items() %}
       .dis_text  .{{value[3]}}{
@@ -42,17 +42,58 @@
       <label class="logo">DoctorBot</label>
       <ul>
         <li><a class="{{activehome}}" id= "specific-anchor" href="/">Home</a></li>
-        <li><a class="{{activeproduct}}" id= "specific-anchor" href="/product">Product</a></li>
+        <li><a class="{{activeproduct}}" id= "specific-anchor" href="/patient_details">Product</a></li>
         <li><a class="{{activeabout}}"id= "specific-anchor" href="/about_us">About Us</a></li>
         {% if current_user.is_authenticated %}
-        <li><a class="{{activelogout}}" id= "specific-anchor" href="/logout">log out</a></li>
-        <li>{{username}}</li>
+        {% if current_user.role=='admin' %}
+        <li>
+          <button onclick="myFunction()" class="dropbtn">Profile</button>
+                <div id="myDropdown" class="dropdown-content">
+                  <a href="/adminProfile">Admin Details</a>
+                  <a href="/logout">Log Out</a>
+                </div>
+        </li>
         {% else %}
-        <li><a class="{{activesignup}}"id= "specific-anchor"  href="/signup">Sign UP</a></li>
-        <li><a class="{{activelogin}}" id= "specific-anchor" href="/login">Log In</a></li>
+        <li>
+          <button onclick="myFunction()" class="dropbtn">Profile</button>
+                <div id="myDropdown" class="dropdown-content">
+                  <a href="/userProfile">User Details</a>
+                  <a href="/logout">Log Out</a>
+                </div>
+        </li>
+        {% endif %}
+        {% else %}
+        <li class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">Signup/Login</button>
+                <div id="myDropdown" class="dropdown-content">
+                  <a href="/signup_Admin">For Admin</a>
+                  <a href="/signup_User">For User</a>
+                </div>
+        </li>
         {% endif %}
       </ul>
     </nav>
+    <script>
+        /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+    </script>
     {% block body %}
     {% endblock %}
   </body>

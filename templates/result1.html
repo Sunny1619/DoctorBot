@@ -2,8 +2,29 @@
 
 {% block body %}
 <div id="Test">
-  <h1 id="test"> Test Result </h1><br>
-  Here is the final result: <br>
+  <div id="patient_id" style="padding: 20px;">
+    <table style="width: 84%;">
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Sex</th>
+        <th>Blood Group</th>
+        <th>Blood Pressure</th>
+        <th>Blood Sugar Level</th>
+        <th>BMI</th>
+      </tr>
+      <tr>
+        <td>{{name}}</td>
+        <td>{{age}}</td>
+        <td>{{sex}}</td>
+        <td>{{bloodg}}</td>
+        <td>{{bloodp}}</td>
+        <td>{{bloodsl}}</td>
+        <td>{{bmi}}</td>
+      </tr>
+    </table>
+  </div>
+  <h1 id="test" style="margin-left: 550px;"> Test Result </h1><br>
 </div>
 <section class="result_text">
   <div class="dis_text">

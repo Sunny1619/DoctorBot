@@ -1,0 +1,121 @@
+[
+    {
+        "name": "Pneumonia",
+        "symptoms": [
+            "Chest Indrawing",
+            "Fast Breathing",
+            "Cough",
+            "Difficulty in Breathing",
+            "Stridor"
+        ],
+        "button": "<button type=\"button\" class=\"btn btn-primary\">Update</button>"
+    },
+    {
+        "name": "Diarrhea",
+        "symptoms": [
+            "Dehydrated",
+            "Fever"
+        ],
+        "button": "<button type=\"button\" class=\"btn btn-primary\">Update</button>"
+    },
+    {
+        "name": "Malaria",
+        "symptoms": [
+            "Stiff Neck",
+            "Bulging Fontanelle",
+            "Fever"
+        ],
+        "button": "<button type=\"button\" class=\"btn btn-primary\">Update</button>"
+    },
+    {
+        "name": "Measles",
+        "symptoms": [
+            "Clouding of Cornea",
+            "Deep or Extensive Ulcers",
+            "Pus Draining From Eye",
+            "Mouth Ulcers"
+        ],
+        "button": "<button type=\"button\" class=\"btn btn-primary\">Update</button>"
+    },
+    {
+        "name": "Mastoiditis",
+        "symptoms": [
+            "Fever",
+            "Tendor Swelling Behind Ear"
+        ],
+        "button": "<button type=\"button\" class=\"btn btn-primary\">Update</button>"
+    },
+    {
+        "name": "Ear Infection",
+        "symptoms": [
+            "Difficulty in Breathing",
+            "Fever",
+            "Ear pain"
+        ],
+        "button": "<button type=\"button\" class=\"btn btn-primary\">Update</button>"
+    },
+    {
+        "name": "Malnutrition",
+        "symptoms": [
+            "Visible Severe Wasting",
+            "Edema of Both Feet",
+            "Underweight"
+        ],
+        "button": "<button type=\"button\" class=\"btn btn-primary\">Update</button>"
+    },
+    {
+        "name": "Anemia",
+        "symptoms": [
+            "Difficulty in Breathing",
+            "Palmar Pallor"
+        ],
+        "button": "<button type=\"button\" class=\"btn btn-primary\">Update</button>"
+    },
+    {
+        "name": "Dehydration",
+        "symptoms": [
+            "Unconscious",
+            "Sunken Eyes",
+            "Not Able to Drink",
+            "Skin Pinch Goes Back Slowly",
+            "Restless",
+            "Irritable",
+            "Thirsty",
+            "Blood in the Stool"
+        ],
+        "button": "<button type=\"button\" class=\"btn btn-primary\">Update</button>"
+    },
+    {
+        "name": "Constipation",
+        "symptoms": [
+            "Fewer than three stools a week",
+            "Hard, dry or lumpy stools",
+            "Straining or pain when passing stools",
+            "A feeling that not all stool has passed",
+            "A feeling that the rectum is blocked"
+        ],
+        "button": "<button type=\"button\" class=\"btn btn-primary\">Update</button>"
+    },
+    {
+        "name": "AIDS",
+        "symptoms": [
+            "Fever",
+            "Chills",
+            "Rash",
+            "Night sweats",
+            "Muscle aches"
+        ],
+        "button": "<button type=\"button\" class=\"btn btn-primary\">Update</button>"
+    },
+    {
+        "name": "test",
+        "symptoms": [
+            "s1",
+            "s2",
+            "s3",
+            "s4",
+            "s5"
+        ],
+        "button": "<button type=\"button\" class=\"btn btn-primary\">Update</button>"
+    }
+]
